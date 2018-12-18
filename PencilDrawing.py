@@ -1,12 +1,5 @@
 import cv2
-import numpy
-from blend_modes import blend_modes
-from PIL import Image
 
-
-import cv2
-import numpy as np
- 
 def dodge(image, mask):
   return cv2.divide(image, 255-mask, scale=256)
 
