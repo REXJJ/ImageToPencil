@@ -6,15 +6,11 @@ def dodge(image, mask):
 def burn(image, mask):
   return 255 - cv2.divide(255-image, 255-mask, scale=256)
 
-img = cv2.imread('cats.jpg', 0)
 
+img = cv2.imread('cats.jpg', 0)
 img2=255-img
 blurImg = cv2.GaussianBlur(img2,(7,7),0)
 blended=dodge(img,blurImg)
-
-
-
-
 cv2.imshow('image', blended) 
 k = cv2.waitKey(0) & 0xFF
   
